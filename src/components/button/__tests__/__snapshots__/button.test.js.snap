@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`button should match snapshot 1 1`] = `
+<button
+  class="button-style"
+>
+  save
+</button>
+`;
+
+exports[`button should match snapshot 2 1`] = `
+<button
+  class="button-style"
+>
+  submit
+</button>
+`;

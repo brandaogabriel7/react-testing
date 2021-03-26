@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`user output should match snapshot 1 1`] = `
+<div>
+  <div>
+    <p>
+      Username: 
+      brandsons
+    </p>
+    <p>
+      I hope I'll be overwritten!
+    </p>
+  </div>
+</div>
+`;
+
+exports[`user output should match snapshot 2 1`] = `
+<div>
+  <div>
+    <p>
+      Username: 
+      randonUsername
+    </p>
+    <p>
+      I hope I'll be overwritten!
+    </p>
+  </div>
+</div>
+`;
