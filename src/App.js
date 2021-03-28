@@ -2,15 +2,22 @@ import React from 'react';
 import UserInput from './components/UserInput/UserInput';
 import UserOutput from './components/UserOutput/UserOutput';
 
-class App extends React.Component {
+class App extends Component {
+  state = {
+    username: 'brands'
+  }
+
+  usernameChangedHandler(event) {
+
+  }
 
   render() {
     return (
       <div className="App">
         <UserInput />
-        <UserOutput username="brands" />
-        <UserOutput username="brands" />
-        <UserOutput username="brands" />
+        <UserOutput username={this.state.username} />
+        <UserOutput username={this.state.username} />
+        <UserOutput username={this.state.username} />
       </div>
     );
   }
