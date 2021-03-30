@@ -1,11 +1,12 @@
 import React from 'react';
-import Char from '../Char/Char';
+import './chars.css';
 
 const Chars = ({ text = '', clicked }) => {
     return (
         <ul>
             {text.split('').map((c, index) =>
-                <Char key={index} char={c} clicked={() => clicked(index)} />)
+                <li key={index} className="char-component" onClick={() => clicked(index)}>{c}</li>
+            )
             }
         </ul>
     );

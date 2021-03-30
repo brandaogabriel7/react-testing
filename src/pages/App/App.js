@@ -1,9 +1,9 @@
-import React from 'react';
-import Chars from './components/Chars/Chars';
+import React, { Component } from 'react';
+import Chars from '../../components/Chars/Chars';
 
-import Validation from './components/Validation/Validation';
+import Validation from '../../components/Validation/Validation';
 
-class App extends React.Component {
+class App extends Component {
   state = {
     text: 'batata'
   };
