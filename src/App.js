@@ -7,7 +7,7 @@ class App extends Component {
     username: 'brands'
   }
 
-  usernameChangedHandler(event) {
+  usernameChangedHandler() {
 
   }
 
