@@ -1,8 +1,8 @@
 import React from 'react';
 import './char.css';
 
-const Char = () => {
-    return <div className='char-component'></div>
+const Char = ({ char }) => {
+    return <li className='char-component'>{char}</li>;
 };
 
 export default Char;
