@@ -1,24 +1,20 @@
 import React from 'react';
-import UserInput from './components/UserInput/UserInput';
-import UserOutput from './components/UserOutput/UserOutput';
 
 class App extends React.Component {
   state = {
-    username: 'brands'
+    text: 'batata'
   }
 
-  usernameChangedHandler = (event) => {
-    const username = event.currentTarget.value;
-    this.setState({username});
+  textChangedHandler = (event) => {
+    const text = event.currentTarget.value;
+    this.setState({text});
   }
 
   render() {
     return (
       <div className="App">
-        <UserInput changed={this.usernameChangedHandler} initialValue={this.state.username} />
-        <UserOutput username={this.state.username} />
-        <UserOutput username={this.state.username} />
-        <UserOutput username={this.state.username} />
+        <input type="text" value={this.state.text} onChange={this.textChangedHandler} />
+        <p>{this.state.text.length}</p>
       </div>
     );
   }
