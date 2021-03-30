@@ -6,8 +6,7 @@ const Chars = ({ text = '', clicked }) => {
         <ul>
             {text.split('').map((c, index) =>
                 <li key={index} className="char-component" onClick={() => clicked(index)}>{c}</li>
-            )
-            }
+            )}
         </ul>
     );
 };

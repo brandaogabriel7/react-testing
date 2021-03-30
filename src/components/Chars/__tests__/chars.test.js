@@ -4,7 +4,10 @@ import React from 'react';
 
 import Chars from '../Chars';
 
-const renderListWithCharsTestCases = [
+const LISTITEM_ROLE = 'listitem';
+const LIST_ROLE = 'list';
+
+const charsDefaultTestCases = [
     ['aa'],
     ['batata'],
     ['this is a text'],
@@ -15,13 +18,13 @@ const renderListWithCharsTestCases = [
 describe('chars should', () => {
     it('render correctly', () => {
         render(<Chars />);
-        expect(screen.getByRole('list')).toBeInTheDocument();
+        expect(screen.getByRole(LIST_ROLE)).toBeInTheDocument();
     });
 
-    it.each(renderListWithCharsTestCases)('render a list with the chars in \'%s\'', (text) => {
+    it.each(charsDefaultTestCases)('render a list with the chars in \'%s\'', (text) => {
         render(<Chars text={text} />);
 
-        const chars = screen.getAllByRole('listitem');
+        const chars = screen.getAllByRole(LISTITEM_ROLE);
 
         expect(chars.length).toBe(text.length);
 
@@ -30,13 +33,11 @@ describe('chars should', () => {
         });
     });
 
-    it('pass the char clicked handler to each char', () => {
-        const text = "aaa";
-
+    it.each(charsDefaultTestCases)('call the provided handler for the chars of \'%s\' being clicked', (text) => {
         const clicked = jest.fn();
         render(<Chars clicked={clicked} text={text} />);
 
-        const chars = screen.getAllByRole('listitem');
+        const chars = screen.getAllByRole(LISTITEM_ROLE);
 
         chars.forEach((char, index) => {
             userEvent.click(char);
