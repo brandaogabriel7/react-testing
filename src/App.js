@@ -15,7 +15,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <UserInput changed={this.usernameChangedHandler} />
+        <UserInput changed={this.usernameChangedHandler} initialValue={this.state.username} />
         <UserOutput username={this.state.username} />
         <UserOutput username={this.state.username} />
         <UserOutput username={this.state.username} />
