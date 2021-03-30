@@ -3,5 +3,6 @@
 exports[`user input should match snapshot 1`] = `
 <input
   type="text"
+  value=""
 />
 `;

@@ -2,22 +2,25 @@ import { render, screen } from '@testing-library/react';
 
 import UserOutput from '../UserOutput';
 
+const renderUsernameCorrectlyTestCases = [
+    ['myUsername123', 'Username: myUsername123', 'I hope I\'ll be overwritten!'],
+    ['brandsons', 'Username: brandsons', 'I hope I\'ll be overwritten!'],
+    ['theBest001', 'Username: theBest001', 'I hope I\'ll be overwritten!']
+];
+
+const matchSnapshotTestCases = [
+    ['randomUsername123'],
+    ['anotherUsename']
+];
+
 describe('user output should', () => {
-    it('render correctly', () => {
-        const username = 'myUsername123';
+    it.each(renderUsernameCorrectlyTestCases)('render \'%s\' username correctly', (username, firstP, secondP) => {
         render(<UserOutput username={username} />);
-        expect(screen.getByText(`Username: ${username}`)).toBeInTheDocument();
-        expect(screen.getByText('I hope I\'ll be overwritten!')).toBeInTheDocument();
+        expect(screen.getByText(firstP)).toBeInTheDocument();
+        expect(screen.getByText(secondP)).toBeInTheDocument();
     });
 
-    it('match snapshot 1', () => {
-        const username = 'brandsons';
-        const { container } = render(<UserOutput username={username} />);
-        expect(container).toMatchSnapshot();
-    });
-
-    it('match snapshot 2', () => {
-        const username = 'randonUsername';
+    it.each(matchSnapshotTestCases)('match snapshot for \'%s\' username', (username) => {
         const { container } = render(<UserOutput username={username} />);
         expect(container).toMatchSnapshot();
     });

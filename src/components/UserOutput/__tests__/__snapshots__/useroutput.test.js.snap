@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`user output should match snapshot 1 1`] = `
+exports[`user output should match snapshot for 'anotherUsename' username 1`] = `
 <div>
   <div>
     <p>
       Username: 
-      brandsons
+      anotherUsename
     </p>
     <p>
       I hope I'll be overwritten!
@@ -14,12 +14,12 @@ exports[`user output should match snapshot 1 1`] = `
 </div>
 `;
 
-exports[`user output should match snapshot 2 1`] = `
+exports[`user output should match snapshot for 'randomUsername123' username 1`] = `
 <div>
   <div>
     <p>
       Username: 
-      randonUsername
+      randomUsername123
     </p>
     <p>
       I hope I'll be overwritten!
