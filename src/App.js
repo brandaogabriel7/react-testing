@@ -13,13 +13,21 @@ class App extends React.Component {
     this.setState({ text });
   };
 
+  charClickedHandler = (index) => {
+    const chars = this.state.text.split('');
+    chars.splice(index, 1);
+
+    const text = chars.join('');
+    this.setState({ text });
+  };
+
   render() {
     return (
       <div className="App">
         <input type="text" value={this.state.text} onChange={this.textChangedHandler} />
         <p>{this.state.text.length}</p>
         <Validation text={this.state.text} />
-        <Chars text={this.state.text} />
+        <Chars text={this.state.text} clicked={this.charClickedHandler} />
       </div>
     );
   }

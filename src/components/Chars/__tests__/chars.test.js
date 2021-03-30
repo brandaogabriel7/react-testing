@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import React from 'react';
 
 import Chars from '../Chars';
@@ -27,5 +28,21 @@ describe('chars should', () => {
         text.split('').forEach((char, index) => {
             expect(chars[index].textContent).toBe(char);
         });
+    });
+
+    it('pass the char clicked handler to each char', () => {
+        const text = "aaa";
+
+        const clicked = jest.fn();
+        render(<Chars clicked={clicked} text={text} />);
+
+        const chars = screen.getAllByRole('listitem');
+
+        chars.forEach((char, index) => {
+            userEvent.click(char);
+            expect(clicked).toHaveBeenLastCalledWith(index);
+        });
+
+        expect(clicked).toHaveBeenCalledTimes(text.length);
     });
 });
